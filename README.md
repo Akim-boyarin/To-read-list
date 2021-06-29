@@ -3,5 +3,5 @@
 
 Стек технологий, использованный в приложении: *Javacript* / *SCSS*.
 
-API, использованное в приложении: `https://openlibrary.org/search.json?q=searchValue&page=numPage`
+API, использованное в приложении: `https://openlibrary.org/search.json?q=searchValue&page=numPage`    
 Для конвертации в CSS используется *Live Sass Compiler*, расширение для *Visual Studio Code*.
