@@ -1,7 +1,7 @@
 # ToReadList
-Данное приложение осуществляет поиск книг в [библиотеке](https://openlibrary.org/), формируя запрос по предоставляемому API, после чего отображает полученные книги на странице. Пользователь также может просмотреть информацию о книге и сохранять понравившиуюся (LocalStorage).
+This application searches books in [library](https://openlibrary.org/) using API which is provided by the library. After it, the application render these books in a page. Also, user can see full information about book and save this book into to-read-list, if he likes it (LocalStorage).
 
-Стек технологий, использованный в приложении: *Javacript* / *SCSS*.
+Realized on *JavaScript* / *SCSS* stack.
 
-API, использованное в приложении: `https://openlibrary.org/search.json?q=searchValue&page=numPage`    
-Для конвертации в CSS используется *Live Sass Compiler*, расширение для *Visual Studio Code*.
+API, which is used in the app: `https://openlibrary.org/search.json?q=searchValue&page=numPage`    
+For convertation to CSS is used *Live Sass Compiler*, it's extension for *Visual Studio Code*.
