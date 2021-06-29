@@ -4,4 +4,4 @@ This application searches books in [library](https://openlibrary.org/) using API
 Realized on *JavaScript* / *SCSS* stack.
 
 API, which is used in the app: `https://openlibrary.org/search.json?q=searchValue&page=numPage`    
-For convertation to CSS is used *Live Sass Compiler*, it's extension for *Visual Studio Code*.
+For converting to CSS is used *Live Sass Compiler*, it's extension for *Visual Studio Code*.
