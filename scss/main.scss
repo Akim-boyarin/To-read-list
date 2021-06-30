@@ -1,0 +1,31 @@
+// -------------------------------------------------------Инструменты-------------------------------------------------------
+
+// Шрифты
+@import "./tools/_fonts.scss";
+
+// Переменные
+@import "./tools/_variables.scss";
+
+// Миксины
+@import "./tools/_mixins.scss";
+
+// Функции
+@import "./tools/_functions.scss";
+
+// Обнуляющие стили
+@import "./tools/_nullstyles.scss";
+
+
+// -----------------------------------------------------------Код-----------------------------------------------------------
+
+// Глобальный уровень
+@import "./_global-section.scss";
+
+// Столбец поиска книги
+@import "./_book-search-section.scss";
+
+// Столбец информации о книге
+@import "./_book-information-section.scss";
+
+// Столбец книг на прочтение
+@import "./_books-to-read-section.scss";

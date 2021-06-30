@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To read list</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="app" class="application">
+        <div class="container">
+            <!-- Поиск книг -->
+            <div class="application__part books-searching">
+                <!-- форма поиска -->
+                <div class="searching-form-block">
+                    <form action="" class="searching-form-block__searching-form">
+                        <input class="searching-form-block__field" type="text" name="searching-field" id="searching-field" placeholder="Search...">
+                        <button class="searching-form-block__button" type="button">Go!</button>
+                    </form>
+                </div>
+                <!-- найденные книги -->
+                <div class="founded-books">
+                    <!-- список книг -->
+                    <div class="founded-books__list">
+                        
+                        <!-- ...книги, которые будут найдены -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- Информация о книге -->
+            <div class="application__part">
+                <div class="info-about-book none">
+                    <!-- заголовок и подзаголовок -->
+                    <div class="info-about-book__title-and-subtitle">
+                        <h2 class="info-about-book__title"></h2>
+                        <p class="info-about-book__subtitle"></p>
+                    </div>
+                    <!-- различная информация о книге -->
+                    <div class="info-about-book__different-info">
+                        <p class="info-about-book__info-element languages-available">Languages available: <span class="languages-available__value"></span></p>
+                        <p class="info-about-book__info-element full-text-available">Full text available: <span class="full-text-available__value"></span></p>
+                        <p class="info-about-book__info-element first-publish-year">First publish year: <span class="first-publish-year__value"></span></p>
+                        <p class="info-about-book__info-element years-published">Years published: <span class="years-published__value"></span></p>
+                    </div>
+                    <!-- кнопка - добавить книгу в список на прочтение -->
+                    <div class="info-about-book__function-add-to-read-list">
+                        <button class="add-to-read-list-button" type="button">Add book to Read List</button>
+                    </div>
+                </div>
+                <div class="empty-info">
+                    <p class="empty-info__text">Information about book...</p>
+                </div>
+            </div>
+            <!-- Книги на прочтение -->
+            <div class="application__part to-read-list">
+                <!-- заголовок и информация по книгам -->
+                <div class="to-read-list__title-and-info">
+                    <h2 class="to-read-list__title">To read list...</h2>
+                    <p class="to-read-list__info"><span class="to-read-list__all-books-number">0</span> books, <span class="to-read-list__read-books-number">0</span> read</p>
+                </div>
+                <!-- список отобранных книг -->
+                <div class="to-read-list__books-list">
+
+                    <!-- ... книги в списке на прочтение -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="/js/variables.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/js/searchAndPrint.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/showInfo.js"></script>
+    <script src="./js/idGenerator.js"></script>
+    <script src="/js/addToReadList.js"></script>
+    <script src="/js/toReadListHandlers.js"></script>
+    <script src="/js/loadBrowser.js"></script>
+</body>
+</html>
+
+<!-- В работе использовался Live Sass Compiler -->

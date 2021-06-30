@@ -1,0 +1,129 @@
+.books-searching {
+    width: 380px;
+    // width: $books-searching-width;
+    height: 100%;
+    @include set-flex-rules(column, space-between, stretch, nowrap);
+}
+
+
+.searching-form-block {
+    &__searching-form {
+        @include set-flex-rules(row, space-between, center, nowrap);
+        padding: 15px;
+        padding-top: 26px;
+    }
+    
+    &__field {
+        display: block;
+        padding: 6px 14px;
+        border: 1px solid $auxiliary-gray;
+        border-radius: 5px;
+        flex-grow: 1;
+        font-size: calc(11em / 7);
+        font-family: $base-text-font;
+        line-height: 1.7;
+        background-clip: padding-box;
+        transition: border-color 0.25s;
+    }
+
+    &__field:focus {
+        border-color: $strong-yellow-selection;
+    }
+
+    &__button {
+        padding: 5px 14px;
+        border-radius: 5px;
+        margin-left: 15px;
+        font-family: $alternative-text-font;
+        font-size: calc(25em / 14);
+        line-height: 1.7;
+        transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+
+        &:hover {
+            background-color: $strong-gray-selection;
+        }
+
+        &:focus {
+            background-color: $strong-yellow-selection;
+            color: $white;
+        }
+    }
+}
+
+.founded-books {
+    max-height: 90%;
+    padding-top: 16px;
+    flex-grow: 1;
+    @include set-flex-rules(column, space-between, stretch, nowrap);
+
+    // список книг
+    &__list {
+        overflow-y: auto;
+    }
+
+    // скроллбар
+    &__list::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &__list::-webkit-scrollbar-thumb {
+        background-color: $auxiliary-gray;
+        border-radius: 15px;
+    }
+}
+
+// книга
+.founded-book {
+    font-family: $base-text-font;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0px 5px;
+    margin-bottom: 4px;
+    transition: background-color 0.08s ease-in-out;
+
+    
+    &__name {
+        font-size: calc(9em / 7);
+        margin-bottom: 5px;
+    }
+    &__subtitle {
+        font-size: calc(15em / 14);
+        font-style: italic;
+    }
+}
+
+.founded-book:hover:not(.founded-book_emphasized) {
+    background-color: $small-yellow-selection;
+    cursor: pointer;
+}
+
+.founded-book_emphasized {
+    background-color: $middle-yellow-selection;
+    font-family: $alternative-text-font;
+    cursor: pointer;
+}
+
+@media (min-width: 2000px) and (max-width: 2399px) {
+    .books-searching {
+        width: 450px;
+    }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+    .books-searching {
+        width: 510px;
+    }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+    .books-searching {
+        width: 520px;
+    }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+    .books-searching {
+        width: 530px;
+    }
+}

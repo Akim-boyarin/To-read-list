@@ -1,0 +1,739 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Segoe UI';
+  src: url("../fonts/Segoe UI.eot");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+header,
+main,
+footer,
+nav,
+article,
+section,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+menu {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+/* убрать кнопку очистки текста в форме в IE */
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* убрать показатель внутреннего фокуса у кнопок в Firefox */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.application {
+  width: 100%;
+  height: 100%;
+  color: #000000;
+}
+
+.application__part:nth-child(2) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: calc(100% - (380px + 300px));
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+@media (max-width: 1399px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1999px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 2199px) {
+  .container {
+    max-width: 1500px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 2200px) and (max-width: 2399px) {
+  .container {
+    max-width: 1600px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+  .container {
+    max-width: 1700px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+  .container {
+    max-width: 1800px;
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+  .container {
+    max-width: 2000px;
+    font-size: 21px;
+  }
+}
+
+.books-searching {
+  width: 380px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.searching-form-block__searching-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 15px;
+  padding-top: 26px;
+}
+
+.searching-form-block__field {
+  display: block;
+  padding: 6px 14px;
+  border: 1px solid #cbcac3;
+  border-radius: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: calc(11em / 7);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  background-clip: padding-box;
+  -webkit-transition: border-color 0.25s;
+  transition: border-color 0.25s;
+}
+
+.searching-form-block__field:focus {
+  border-color: #d89808;
+}
+
+.searching-form-block__button {
+  padding: 5px 14px;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: calc(25em / 14);
+  line-height: 1.7;
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+}
+
+.searching-form-block__button:hover {
+  background-color: #dbdbd6;
+}
+
+.searching-form-block__button:focus {
+  background-color: #d89808;
+  color: #ffffff;
+}
+
+.founded-books {
+  max-height: 90%;
+  padding-top: 16px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.founded-books__list {
+  overflow-y: auto;
+}
+
+.founded-books__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.founded-books__list::-webkit-scrollbar-thumb {
+  background-color: #cbcac3;
+  border-radius: 15px;
+}
+
+.founded-book {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0px 5px;
+  margin-bottom: 4px;
+  -webkit-transition: background-color 0.08s ease-in-out;
+  transition: background-color 0.08s ease-in-out;
+}
+
+.founded-book__name {
+  font-size: calc(9em / 7);
+  margin-bottom: 5px;
+}
+
+.founded-book__subtitle {
+  font-size: calc(15em / 14);
+  font-style: italic;
+}
+
+.founded-book:hover:not(.founded-book_emphasized) {
+  background-color: #fef7e7;
+  cursor: pointer;
+}
+
+.founded-book_emphasized {
+  background-color: #fce7b6;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+@media (min-width: 2000px) and (max-width: 2399px) {
+  .books-searching {
+    width: 450px;
+  }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+  .books-searching {
+    width: 510px;
+  }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+  .books-searching {
+    width: 520px;
+  }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+  .books-searching {
+    width: 530px;
+  }
+}
+
+.application__part:nth-child(2)
+.info-about-book {
+  padding: 20px 90px;
+}
+
+.application__part:nth-child(2)
+.info-about-book__title-and-subtitle {
+  margin-bottom: 39px;
+}
+
+.application__part:nth-child(2)
+.info-about-book__title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: calc(20em / 7);
+  margin-bottom: 3px;
+  color: #420a0a;
+}
+
+.application__part:nth-child(2)
+.info-about-book__subtitle {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-size: calc(8em / 7);
+}
+
+.application__part:nth-child(2)
+.info-about-book__different-info {
+  margin-bottom: 30px;
+}
+
+.application__part:nth-child(2)
+.info-about-book__different-info .languages-available,
+.application__part:nth-child(2)
+.info-about-book__different-info .full-text-available,
+.application__part:nth-child(2)
+.info-about-book__different-info .first-publish-year,
+.application__part:nth-child(2)
+.info-about-book__different-info .years-published {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(9em / 7);
+}
+
+.application__part:nth-child(2)
+.info-about-book__different-info .years-published {
+  max-width: 90%;
+}
+
+.application__part:nth-child(2)
+.info-about-book__info-element {
+  margin-bottom: 10px;
+}
+
+.application__part:nth-child(2)
+.info-about-book__function-add-to-read-list .add-to-read-list-button {
+  padding: 7px 11px;
+  border-radius: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: calc(9em / 7);
+  background-color: #e7e7e4;
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+}
+
+.application__part:nth-child(2)
+.info-about-book__function-add-to-read-list .add-to-read-list-button:hover {
+  background-color: #dbdbd6;
+}
+
+.application__part:nth-child(2)
+.info-about-book__function-add-to-read-list .add-to-read-list-button:focus {
+  background-color: #d89808;
+  color: #ffffff;
+}
+
+.empty-info {
+  padding: 36px 90px;
+}
+
+.empty-info__text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(15em / 7);
+  font-weight: bold;
+  color: #dbdbd6;
+}
+
+.none {
+  display: none;
+}
+
+@media (min-width: 2000px) and (max-width: 2199px) {
+  .application__part:nth-child(2) {
+    max-width: calc(100% - (450px + 350px));
+  }
+  .info-about-book {
+    padding: 20px 120px;
+  }
+  .empty-info {
+    padding: 49px 120px;
+  }
+}
+
+@media (min-width: 2200px) and (max-width: 2399px) {
+  .application__part:nth-child(2) {
+    max-width: calc(100% - (450px + 350px));
+  }
+  .info-about-book {
+    padding: 20px 150px;
+  }
+  .empty-info {
+    padding: 49px 150px;
+  }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+  .application__part:nth-child(2) {
+    max-width: calc(100% - (510px + 350px));
+  }
+  .info-about-book {
+    padding: 20px 180px;
+  }
+  .empty-info {
+    padding: 49px 180px;
+  }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+  .application__part:nth-child(2) {
+    max-width: calc(100% - (520px + 380px));
+  }
+  .info-about-book {
+    padding: 20px 210px;
+  }
+  .empty-info {
+    padding: 36px 200px;
+  }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+  .application__part:nth-child(2) {
+    max-width: calc(100% - (530px + 400px));
+  }
+  .info-about-book {
+    padding: 20px 250px;
+  }
+  .empty-info {
+    padding: 49px 250px;
+  }
+}
+
+.to-read-list {
+  width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.to-read-list__title-and-info {
+  padding: 15px;
+  padding-top: 24px;
+  margin-bottom: 11px;
+}
+
+.to-read-list__title {
+  margin-bottom: 3px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(5em / 2);
+  font-weight: bold;
+  color: #420a0a;
+}
+
+.to-read-list__info {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(8em / 7);
+}
+
+.to-read-list__books-list {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.to-read-list__books-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.to-read-list__books-list::-webkit-scrollbar-thumb {
+  background-color: #cbcac3;
+  border-radius: 15px;
+}
+
+.book-of-to-read-list {
+  margin: 0 5px;
+  margin-bottom: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-transition: background-color 0.08s ease-in-out;
+  transition: background-color 0.08s ease-in-out;
+  cursor: pointer;
+}
+
+.book-of-to-read-list__body {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.book-of-to-read-list__name {
+  font-size: calc(11em / 7);
+  margin-bottom: 8px;
+}
+
+.book-of-to-read-list__subtitle {
+  font-size: calc(15em / 14);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.book-of-to-read-list__author-name {
+  font-size: calc(10em / 7);
+}
+
+.book-of-to-read-list__work-with-book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.book-of-to-read-list__mark-as-read-button, .book-of-to-read-list__remove-from-list-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1em;
+  background-color: #ffffff;
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+}
+
+.book-of-to-read-list__remove-from-list-function {
+  margin-left: 10px;
+}
+
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__body {
+  background-color: #fef7e7;
+}
+
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__mark-as-read-button,
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__remove-from-list-button {
+  background-color: #e7e7e4;
+}
+
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__mark-as-read-button:focus,
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__remove-from-list-button:focus {
+  color: #ffffff;
+}
+
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__mark-as-read-button:focus {
+  background-color: #d89808;
+}
+
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) .book-of-to-read-list__remove-from-list-button:focus {
+  background-color: #dc143c;
+}
+
+.book-of-to-read-list:hover .book-of-to-read-list__mark-as-read-button:hover:not(.book-of-to-read-list__mark-as-read-button:focus),
+.book-of-to-read-list:hover .book-of-to-read-list__remove-from-list-button:hover:not(.book-of-to-read-list__remove-from-list-button:focus) {
+  background-color: #dbdbd6;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__body {
+  background-color: #fce7b6;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__work-with-book {
+  padding-left: 0;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__mark-as-read-button,
+.book-of-to-read-list_emphasized .book-of-to-read-list__remove-from-list-button {
+  background-color: #e7e7e4;
+  font-weight: bold;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__mark-as-read-button:focus,
+.book-of-to-read-list_emphasized .book-of-to-read-list__remove-from-list-button:focus {
+  color: #ffffff;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__mark-as-read-button:focus {
+  background-color: #d89808;
+}
+
+.book-of-to-read-list_emphasized .book-of-to-read-list__remove-from-list-button:focus {
+  background-color: #dc143c;
+}
+
+div .book-of-to-read-list_read {
+  color: #831616;
+}
+
+div .book-of-to-read-list_read .book-of-to-read-list__subtitle {
+  display: none;
+}
+
+@media (max-width: 1399px) {
+  .book-of-to-read-list__work-with-book {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .book-of-to-read-list__body {
+    margin-bottom: 2px;
+  }
+  .book-of-to-read-list__subtitle {
+    margin-bottom: 8px;
+  }
+  .book-of-to-read-list__remove-from-list-function {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 2399px) {
+  .to-read-list {
+    width: 350px;
+  }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+  .to-read-list {
+    width: 350px;
+  }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+  .to-read-list {
+    width: 380px;
+  }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+  .to-read-list {
+    width: 400px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

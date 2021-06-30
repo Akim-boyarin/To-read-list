@@ -1,0 +1,3 @@
+@function createPadding($value) {
+    @return join($value, $value * 3);
+}

@@ -1,0 +1,156 @@
+.application__part:nth-child(2)
+
+.info-about-book {
+    padding: 20px 90px;
+
+    // заголовок и подпись, контейнер
+    &__title-and-subtitle {
+        margin-bottom: 39px;
+    }
+
+    // заголовок
+    &__title {
+        font-family: $base-text-font;
+        font-weight: bold;
+        font-size: calc(20em / 7);
+        margin-bottom: 3px;
+        color: $title-color;
+    }
+
+    // подпись
+    &__subtitle {
+        font-family: $base-text-font;
+        font-style: italic;
+        font-size: calc(8em / 7);
+    }
+
+    // информация о книге, контейнер
+    &__different-info {
+        margin-bottom: 30px;
+
+        .languages-available,
+        .full-text-available,
+        .first-publish-year,
+        .years-published {
+            font-family: $base-text-font;
+            font-size: calc(9em / 7);
+        }
+
+        .years-published {
+            max-width: 90%;
+        }
+    }
+
+    // элемент информации о книге
+    &__info-element {
+        margin-bottom: 10px;
+    }
+
+    // кнопка добавления, контейнер
+    &__function-add-to-read-list {
+        
+        // кнопка добавления
+        .add-to-read-list-button {
+            padding: 7px 11px;
+            border-radius: 5px;
+            font-family: $alternative-text-font;
+            font-size: calc(9em / 7);
+            background-color: $small-gray-selection;
+            transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+        
+            &:hover {
+                background-color: $strong-gray-selection;
+            }
+    
+            &:focus {
+                background-color: $strong-yellow-selection;
+                color: $white;
+            }
+        }
+    }
+}
+
+.empty-info {
+    padding: 36px 90px;
+
+    &__text {
+        font-family: $base-text-font;
+        font-size: calc(15em / 7);
+        font-weight: bold;
+        color: $strong-gray-selection;
+    }
+}
+
+.none {
+    display: none;
+}
+
+@media (min-width: 2000px) and (max-width: 2199px) {
+    .application__part:nth-child(2) {
+        max-width: calc(100% - (450px + 350px));
+    }
+    
+    .info-about-book {
+        padding: 20px 120px;
+    }
+
+    .empty-info {
+        padding: 49px 120px;
+    }
+}
+
+@media (min-width: 2200px) and (max-width: 2399px) {
+    .application__part:nth-child(2) {
+        max-width: calc(100% - (450px + 350px));
+    }
+
+    .info-about-book {
+        padding: 20px 150px;
+    }
+
+    .empty-info {
+        padding: 49px 150px;
+    }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+    .application__part:nth-child(2) {
+        max-width: calc(100% - (510px + 350px));
+    }
+    
+    .info-about-book {
+        padding: 20px 180px;
+    }
+
+    .empty-info {
+        padding: 49px 180px;
+    }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+    .application__part:nth-child(2) {
+        max-width: calc(100% - (520px + 380px));
+    }
+    
+    .info-about-book {
+        padding: 20px 210px;
+    }
+
+    .empty-info {
+        padding: 36px 200px;
+    }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+    .application__part:nth-child(2) {
+        max-width: calc(100% - (530px + 400px));
+    }
+    
+    .info-about-book {
+        padding: 20px 250px;
+    }
+
+    .empty-info {
+        padding: 49px 250px;
+    }
+}

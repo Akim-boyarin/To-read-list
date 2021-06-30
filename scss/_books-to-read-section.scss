@@ -1,0 +1,203 @@
+.to-read-list {
+    width: 300px;
+    height: 100%;
+    @include set-flex-rules(column, space-between, stretch, nowrap);
+
+    &__title-and-info {
+        padding: 15px;
+        padding-top: 24px;
+        margin-bottom: 11px;
+    }
+
+    &__title {
+        margin-bottom: 3px;
+        font-family: $base-text-font;
+        font-size: calc(5em / 2);
+        font-weight: bold;
+        color: $title-color;
+    }
+
+    &__info {
+        font-family: $base-text-font;
+        font-size: calc(8em / 7);
+    }
+ 
+    &__books-list {
+        flex-grow: 1;
+        max-height: 90%;
+        overflow-y: auto;
+    }
+
+    &__books-list::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &__books-list::-webkit-scrollbar-thumb {
+        background-color: $auxiliary-gray;
+        border-radius: 15px;
+    }
+}
+
+.book-of-to-read-list {
+    margin: 0 5px;
+    margin-bottom: 15px;
+    font-family: $base-text-font;
+    transition: background-color 0.08s ease-in-out;
+    cursor: pointer;
+    
+    &__body {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    &__name {
+        font-size: calc(11em / 7);
+        margin-bottom: 8px;
+    }
+
+    &__subtitle {
+        font-size: calc(15em / 14);
+        font-style: italic;
+        margin-bottom: 12px;
+    }
+
+    &__author-name {
+        font-size: calc(10em / 7);
+    }
+
+    &__work-with-book {
+        @include set-flex-rules(row, flex-start, center, nowrap);
+    }
+
+    &__mark-as-read-button,
+    &__remove-from-list-button {
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: $alternative-text-font;
+        font-size: 1em;
+        background-color: $white;
+        transition: background-color 0.25s ease-in-out, color 0.09s ease-in-out;
+    }
+
+    &__remove-from-list-function {
+        margin-left: 10px;
+    }
+}
+
+// наведение на книгу
+.book-of-to-read-list:hover:not(.book-of-to-read-list_emphasized) {
+    .book-of-to-read-list__body {
+        background-color: $small-yellow-selection;
+    }
+
+    .book-of-to-read-list__mark-as-read-button,
+    .book-of-to-read-list__remove-from-list-button {
+        background-color: $small-gray-selection;
+    }
+
+    .book-of-to-read-list__mark-as-read-button:focus,
+    .book-of-to-read-list__remove-from-list-button:focus {
+        color: $white;
+    }
+
+    .book-of-to-read-list__mark-as-read-button:focus {
+        background-color: $strong-yellow-selection;
+    }
+
+    .book-of-to-read-list__remove-from-list-button:focus {
+        background-color: $delete-color; 
+    }
+
+}
+
+.book-of-to-read-list:hover {
+    .book-of-to-read-list__mark-as-read-button:hover:not(.book-of-to-read-list__mark-as-read-button:focus),
+    .book-of-to-read-list__remove-from-list-button:hover:not(.book-of-to-read-list__remove-from-list-button:focus) {
+        background-color: $strong-gray-selection;
+    }
+}
+
+// нажатие на книгу
+.book-of-to-read-list_emphasized {
+    .book-of-to-read-list__body {
+        background-color: $middle-yellow-selection;
+        font-family: $alternative-text-font;
+    }
+
+    .book-of-to-read-list__work-with-book {
+        padding-left: 0;
+    }
+
+    .book-of-to-read-list__mark-as-read-button,
+    .book-of-to-read-list__remove-from-list-button {
+        background-color: $small-gray-selection;
+        font-weight: bold;
+    }
+
+    .book-of-to-read-list__mark-as-read-button:focus,
+    .book-of-to-read-list__remove-from-list-button:focus {
+        color: $white;
+    }
+
+    .book-of-to-read-list__mark-as-read-button:focus {
+        background-color: $strong-yellow-selection;
+    }
+
+    .book-of-to-read-list__remove-from-list-button:focus {
+        background-color: $delete-color; 
+    }
+}
+
+// прочитанная книга
+div .book-of-to-read-list_read {
+    color: $read-book-color;
+
+    .book-of-to-read-list__subtitle {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1399px) {
+    .book-of-to-read-list__work-with-book {
+        @include set-flex-rules(column, flex-start, flex-start, nowrap);
+    }
+    
+    .book-of-to-read-list__body {
+        margin-bottom: 2px;
+    }
+
+    .book-of-to-read-list__subtitle {
+        margin-bottom: 8px;
+    }
+
+    .book-of-to-read-list__remove-from-list-function {
+        margin-left: 0;
+        margin-top: 2px;
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 2399px) {
+    .to-read-list {
+        width: 350px;
+    }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+    .to-read-list {
+        width: 350px;
+    }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+    .to-read-list {
+        width: 380px;
+    }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+    .to-read-list {
+        width: 400px;
+    }
+}

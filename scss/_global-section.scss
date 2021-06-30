@@ -1,0 +1,71 @@
+.application {
+    width: 100%;
+    height: 100%;
+    color: $base-color;
+
+    &__part:nth-child(2) {
+        flex-grow: 1;
+        max-width: calc(100% - (380px + 300px));
+    }
+}
+
+.container {
+    height: 100%;
+    margin: 0 auto;
+    @include set-flex-rules(row, stretch, space-between, nowrap);
+}
+
+
+@media (max-width: 1399px) {
+    .container {
+        max-width: 920px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .container {
+        max-width: 1100px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1999px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 2199px) {
+    .container {
+        max-width: 1500px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 2200px) and (max-width: 2399px) {
+    .container {
+        max-width: 1600px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2400px) and (max-width: 2599px) {
+    .container {
+        max-width: 1700px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2600px) and (max-width: 2799px) {
+    .container {
+        max-width: 1800px;
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 2800px) and (max-width: 3000px) {
+    .container {
+        max-width: 2000px;
+        font-size: 21px;
+    }
+}
+
