@@ -10,9 +10,9 @@ booksListToRead.addEventListener("click", event => {
     if (!workingCondition) return;
 
     let browserBook = event.target.closest(".book-of-to-read-list");
-    let id = browserBook.dataset.id;
+    let key = browserBook.dataset.key;
 
-    let bookObject = JSON.parse(localStorage.getItem(id));
+    let bookObject = JSON.parse(localStorage.getItem(key));
     fillInformationBlock(bookObject);
 
     removeSelection();
@@ -24,9 +24,9 @@ booksListToRead.addEventListener("click", event => {
     if (event.target.className !== "book-of-to-read-list__mark-as-read-button") return;
 
     let browserBook = event.target.closest(".book-of-to-read-list");
-    let id = browserBook.dataset.id;
+    let key = browserBook.dataset.key;
 
-    let bookObject = JSON.parse(localStorage.getItem(id));
+    let bookObject = JSON.parse(localStorage.getItem(key));
     bookObject.isRead = !bookObject.isRead;
 
     let readBooksNumber = +readBooksInReadListValue.textContent;
@@ -45,8 +45,8 @@ booksListToRead.addEventListener("click", event => {
             break;
     }
 
-    let convertedObject = JSON.stringify(bookObject);
-    localStorage.setItem(id, convertedObject);
+    let convertedBook = JSON.stringify(bookObject);
+    localStorage.setItem(key, convertedBook);
 });
 
 // работа с кнопкой "Remove from list"
@@ -54,9 +54,9 @@ booksListToRead.addEventListener("click", event => {
     if (event.target.className !== "book-of-to-read-list__remove-from-list-button") return;
 
     let browserBook = event.target.closest(".book-of-to-read-list");
-    let id = browserBook.dataset.id;
+    let key = browserBook.dataset.key;
 
-    let bookObject = JSON.parse(localStorage.getItem(id));
+    let bookObject = JSON.parse(localStorage.getItem(key));
 
     if (bookObject.isRead) {
         let readBooksNumber = +readBooksInReadListValue.textContent;
@@ -66,7 +66,7 @@ booksListToRead.addEventListener("click", event => {
     let allBooksNumber = +allBooksInReadListValue.textContent;
     allBooksInReadListValue.textContent = `${allBooksNumber - 1}`;
 
-    localStorage.removeItem(id);
+    localStorage.removeItem(key);
 
     browserBook.remove();
 });

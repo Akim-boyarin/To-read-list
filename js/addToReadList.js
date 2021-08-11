@@ -1,17 +1,13 @@
-// Добавление книги в список прочитанных
+// Добавление книги в список сохранённых
 addToReadListButton.addEventListener("click", event => {
     let bookObject = infoAboutBookContainer.sourceObject;
-    
-    if (bookObject.isInLocalStorage) return;
+
+    if (isBookInLocalStorage(bookObject)) return;
 
     // добавление в хранилище
-    bookObject.isInLocalStorage = true;
-    if (!bookObject.keyId) bookObject.keyId = generateId();
     bookObject.addDate = Date.now();
-    bookObject.isRead = false;
-
-    let convertedBookObject = JSON.stringify(bookObject);
-    localStorage.setItem(bookObject.keyId, convertedBookObject);
+    let convertedBook = JSON.stringify(bookObject);
+    localStorage.setItem(bookObject.key, convertedBook);
 
     // отображение
     printBrowserBookToRead(bookObject);

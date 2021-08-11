@@ -19,7 +19,7 @@ async function getAndDisplayBooks(url) {
     let currentFoundBooks = foundBooksData.docs;
 
     for (let i = 0; i < currentFoundBooks.length; i++) {
-        currentFoundBooks.isConvertedPublishYearsList = false;
+        currentFoundBooks[i].isRead = false;
         foundBooks.push(currentFoundBooks[i]);
     }
 
@@ -36,9 +36,9 @@ function displayBooks(books) {
         let browserBook = document.createElement("div");
         browserBook.className = "founded-books__book founded-book";
         browserBook.innerHTML += `
-                    <p class="founded-book__name">${title} ${shownLanguage}</p>
-                    <p class="founded-book__subtitle ${!!book.subtitle ? "" : "none"}">${subtitle}</p>
-                `;
+            <p class="founded-book__name">${title} ${shownLanguage}</p>
+            <p class="founded-book__subtitle ${!!book.subtitle ? "" : "none"}">${subtitle}</p>
+        `;
 
         browserBook.sourceObject = book;
 
@@ -88,6 +88,18 @@ function fillInformationBlock(bookWithInfo) {
     infoAboutBookContainer.classList.remove("none");
 }
 
+// проверить, есть ли книга с таким ключом в хранилище
+function isBookInLocalStorage(potentialNewBook) {
+    let newKey = potentialNewBook.key;
+    const UNDESIRED_KEY = "activeDarkSite";
+
+    let storageKeys = Object.keys(localStorage);
+    storageKeys.splice(storageKeys.indexOf(UNDESIRED_KEY), 1);
+
+    return storageKeys.includes(newKey);
+}
+
+// показать количество книг в хранилище
 function printBooksToReadNumber() {
     let keys = Object.keys(localStorage);
     let allBooksNumber = keys.length;
@@ -96,6 +108,7 @@ function printBooksToReadNumber() {
     allBooksInReadListValue.textContent = `${allBooksNumber}`;
 }
 
+// отобразить книгу в списке сохранённых
 function printBrowserBookToRead(bookData) {
     let bookToReadTitle = bookData.title;
     let bookToReadShownLanguage = !!bookData.language ? `(${bookData.language[bookData.language.length - 1]})` : "";
@@ -121,8 +134,6 @@ function printBrowserBookToRead(bookData) {
         </div>
     `;
 
-    newBrowserBookToRead.setAttribute("data-id", bookData.keyId);
+    newBrowserBookToRead.setAttribute("data-key", bookData.key);
     booksListToRead.append(newBrowserBookToRead);
 }
-
-// также часть функций лежит в файле idGenerator.js
