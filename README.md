@@ -6,4 +6,4 @@ Realized on *JavaScript* / *SCSS* stack.
 API, which is used in the app: `https://openlibrary.org/search.json?q=searchValue&page=numPage`    
 For converting to CSS *Live Sass Compiler* is used, it's extension for *Visual Studio Code*.
 
-[:arrow_forward: run](https://akim-boyarin.github.io/ToReadList/)
+[:arrow_forward: Run](https://akim-boyarin.github.io/ToReadList/)
